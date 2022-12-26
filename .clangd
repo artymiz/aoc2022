@@ -1,0 +1,12 @@
+CompileFlags:
+    # Treat all code as c++
+    Add: [ -xc++, -std=c++20, -Wall, -Wno-missing-pototypes ]
+    # Remove extra warnings in compile commmands
+    Remove: [ -mabi ]
+    Compiler: g++
+
+Dianostics:
+    UnusedIncludes: Strict
+    ClangTidy:
+        Add: [ performance*, modernize*, readability* ]
+        Remove: [ modernize-use-trailing-return-type ]
